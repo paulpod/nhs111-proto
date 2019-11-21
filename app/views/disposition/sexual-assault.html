@@ -67,6 +67,55 @@
             </div>
           </div>
 
+
+
+          <div class="service-details-container">
+
+            <div class="details-1 service-details">
+              <div class="unit address">
+                <p>
+                  Whitechapel Haven<br>
+                  The Royal London Hospital<br>
+                  Whitechapel Road<br>
+                  London<br>
+                  E1 1BB
+                </p>
+              </div>
+              <div class="unit">
+                {% set opening = "Open 24 hours"%}
+                {% set suppress_full = true %}
+                {% include 'service-display/_components/opening-hours.html' %}
+              </div>
+            </div>
+
+            <div class="geo">
+              <div id="service-location" class="map-frame"></div>
+            </div>
+
+            <div class="details-2 service-details">
+              <div class="unit directions">
+                <p>
+                  2.4 miles away<br>
+                  <a href="javascript: return false;" target="_blank">
+                    Get directions <span class="small">(opens a new tab or window)</span>
+                  </a>
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- boilerplate service type text and 'before you go' -->
+          <div class="measure">
+            <p>
+              Sexual health services provide contraception, testing and treatment
+              for sexually transmitted infections (STIs), pregnancy advice and
+              testing and help with sexual problems. Sexual assault referral
+              centres offer confidential help and medical care.
+            </p>
+          </div>
+
+          <!--
           <div class="location-section">
             <div class="geo">
               <div id="service-location" class="map-frame"></div>
@@ -104,6 +153,7 @@
               </div>
             </details>
           </div>
+          -->
         </div>
 
         <div class="measure">
@@ -177,13 +227,17 @@
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
   <script>
+    var serviceLat = 51.518359;
+    var serviceLng = -0.059963;
+    var userLat = 51.500503;
+    var userLng = -0.104894;
     $(function() {
       mapObj = new google.maps.Map(document.getElementById('service-location'), {
         center: {
-          lat: 51.518359,
-          lng: -0.059963
+          lat: serviceLat,
+          lng: serviceLng
         },
-        zoom: 16,
+        zoom: 13,
         maxZoom: 18,
         zoomControl: true,
         mapTypeControl: false,
@@ -192,7 +246,19 @@
         rotateControl: false,
         fullscreenControl: false
       });
-      marker = new google.maps.Marker({position: mapObj.getCenter(), map: mapObj});
+      var bounds = new google.maps.LatLngBounds();
+      var service = new google.maps.Marker({
+        position: new google.maps.LatLng(serviceLat, serviceLng),
+        map: mapObj
+      });
+      bounds.extend(service.position);
+      var user = new google.maps.Marker({
+        position: new google.maps.LatLng(userLat, userLng),
+        map: mapObj,
+        icon: '/images/icon-maps-user-location.png'
+      });
+      bounds.extend(user.position);
+      mapObj.fitBounds(bounds);
     });
   </script>
 {% endblock %}
