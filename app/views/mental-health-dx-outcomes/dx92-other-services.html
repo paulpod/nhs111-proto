@@ -28,9 +28,9 @@
     <div class="collapse-title">
       <div class="service-listing">
         <b>A&E (accident and emergency)</b><br>
-        Mid Yorkshire Hospitals
+        North Manchester general hospital
         <div class="service-pertinent">
-          <span class="small">11 miles away</span>
+          <span class="small">3 miles away</span>
         </div>
         <span class="collapse-title-indicator-verbose">
           <span class="show">More information</span>
@@ -51,11 +51,12 @@
           <div class="unit address">
             <p>
               <b>A&E (accident and emergency)</b><br>
-              Mid Yorkshire Hospitals<br>
-              Dewsbury and District Hospital<br>
-              Halifax Road<br>
-              Dewsbury<br>
-              WF13 4HS
+              North Manchester general hospital<br>
+              Delauneys Road<br>
+              Crumpsall<br>
+              Manchester<br>
+              Lancashire<br>
+              M8 5RB
             </p>
           </div>
           <div class="unit">
@@ -66,25 +67,12 @@
         </div>
         <div class="subroutine measure"></div>
         <div class="geo">
-          <div id="service-location" class="map-frame">
-            <a href="javascript: return false;">
-              <img src="
-                https://maps.googleapis.com/maps/api/staticmap?
-                  &zoom=11
-                  &size=572x464
-                  &maptype=roadmap
-                  &markers=53.701942,-1.649995
-                  &markers=anchor:bottom
-                    %7Cicon:https://demotive.com/assets/icon-maps-user-location.png
-                    %7C53.804741,-1.564623
-                  &key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM
-              ">
-            </a>
-          </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2372.1995757664404!2d-2.2323079841550433!3d53.51849248001547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb042ea6251e9%3A0xef589b95d7e6e7bf!2sNorth%20Manchester%20General%20Hospital!5e0!3m2!1sen!2suk!4v1596632071928!5m2!1sen!2suk" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
         <div class="details-2 service-details">
           <div class="unit directions">
             <p>
+              3 miles away<br>
               <a href="javascript: return false;" target="_blank">
                 Get directions <span class="small">(opens a new tab or window)</span>
               </a>
@@ -94,14 +82,12 @@
       </div>
     </div>
 
-    <!-- A place you go but need an appointment **************************** -->
-    <!-- “PHONE AND GO” **************************************************** -->
     <div class="collapse-title">
       <div class="service-listing">
-        <b>Minor injuries unit</b><br>
-        St Georges Centre
+        <b>Urgent treatment centre</b><br>
+        Manchester Royal infirmary
         <div class="service-pertinent">
-          <span class="small">6.8 miles away</span>
+          <span class="small">3.7 miles away</span>
         </div>
         <span class="collapse-title-indicator-verbose">
           <span class="show">More information</span>
@@ -110,47 +96,45 @@
       </div>
     </div>
     <div class="collapse-content">
-      <div class="service-details-container service-details --remote">
-        <div class="unit">
-          <p class="small measure">
-            Minor injury units (also called urgent treatment centres) are open
-            for at least 12 hours every day. They can diagnose and deal with
-            many of the most common problems people go to A&E for.
-          </p>
-          <div class="content-seperator content-seperator--white content-seperator--equalvertspacing"></div>
-        </div>
-        <div class="unit">
-          <div class="measure">
+      <div class="service-details-container">
+        <div class="details-1 service-details">
+          <div class="unit">
+            <p class="small measure">
+              Urgent treatment centres are overseen by GPs. They’re open for at least 12
+              hours every day. They can diagnose and deal with many of the most common
+              problems people go to A&E for.
+            </p>
+            <div class="content-seperator content-seperator--white content-seperator--equalvertspacing"></div>
+          </div>
+          <div class="unit address">
             <p>
-              <span class="form-hint small">You must call to book an appointment</span>
+              <b>Minor injuries unit</b><br>
+              Manchester Royal Infirmary<br>
+              Oxford road<br>
+              Manchester<br>
+              Greater Manchester<br>
+              M13 9WL
             </p>
           </div>
-          <p class="tel-cta">
-            <a href="javascript: return false;">Call 01482 301701</a>
-          </p>
+          <div class="unit">
+            {% set opening = "Open 24 hours"%}
+            {% set suppress_full = true %}
+            {% include 'service-display/_components/opening-hours.html' %}
+          </div>
         </div>
-        <div class="unit">
-          {% set opening = "Open until 11pm" %}
-          {% set suppress_full = true %}
-          {% include 'service-display/_components/opening-hours.html' %}
+        <div class="subroutine measure"></div>
+        <div class="geo">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2375.312638760768!2d-2.228345684157159!3d53.46287248000366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb18eda87f675%3A0xdc47eb19bae350ef!2sManchester%20Royal%20Infirmary!5e0!3m2!1sen!2suk!4v1596636169389!5m2!1sen!2suk" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
-        <div class="unit">
-          <p>
-            <b>Minor injuries unit</b><br>
-            St Georges Centre<br>
-            St Georges Road<br>
-            Middleton<br>
-            Leeds<br>
-            LS10 4UZ
-          </p>
-        </div>
-        <div class="unit">
-          <p>
-            6.8 miles away<br>
-            <a href="javascript: return false;" target="_blank">
-              Get directions <span class="small">(opens a new tab or window)</span>
-            </a>
-          </p>
+        <div class="details-2 service-details">
+          <div class="unit directions">
+            <p>
+              3.7 miles away<br>
+              <a href="javascript: return false;" target="_blank">
+                Get directions <span class="small">(opens a new tab or window)</span>
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -160,7 +144,7 @@
     <div class="collapse-title">
       <div class="service-listing">
         <b>Mental health service</b><br>
-        Community Mental Health Team for Older Adults - Medway
+        Community Mental Health Team - Ramsgate
         <div class="service-pertinent">
           <span class="small">Telephone service</span>
         </div>
@@ -180,7 +164,7 @@
         </div>
         <div class="unit">
           <p class="tel-cta">
-            <a href="javascript: return false;">Call 01482 301701</a>
+            <a href="javascript: return false;">Call 0161 358 0732</a>
           </p>
         </div>
         <div class="unit">
@@ -196,8 +180,8 @@
     <!-- “ITK ONLY” ******************************************************** -->
     <div class="collapse-title">
       <div class="service-listing">
-        <b>Evening and weekend GP</b><br>
-        GP Out Of Hours - Slough, Maidenhead, Bracknell and Windsor
+        <b>Community Mental Health Team</b><br>
+        Community mental health north west area team
         <div class="service-pertinent">
           <span class="small">Telephone service</span>
         </div>
@@ -211,8 +195,7 @@
       <div class="service-details-container service-details --remote">
         <div class="unit">
           <p class="small measure">
-            This is a GP service available outside normal working hours (out of hours)
-            and over weekends and public holidays.
+            This is a service with trained mental health specialists.
           </p>
           <div class="content-seperator content-seperator--white content-seperator--equalvertspacing"></div>
         </div>
@@ -242,67 +225,15 @@
         </div>
       </div>
     </div>
-
-    <!-- A SECOND place you get a CALLBACK from **************************** -->
-    <!-- “ITK ONLY” ******************************************************** -->
-    <div class="collapse-title">
-      <div class="service-listing">
-        <b>Evening and weekend GP</b><br>
-        GP Out Of Hours - Sandhurst Patients Only
-        <div class="service-pertinent">
-          <span class="small">Telephone service</span>
-        </div>
-        <span class="collapse-title-indicator-verbose">
-          <span class="show">More information</span>
-          <span class="hide">Hide</span>
-        </span>
-      </div>
-    </div>
-    <div class="collapse-content">
-      <div class="service-details-container service-details --remote">
-        <div class="unit">
-          <p class="small measure">
-            This is a GP service available outside normal working hours (out of hours)
-            and over weekends and public holidays.
-          </p>
-          <div class="content-seperator content-seperator--white content-seperator--equalvertspacing"></div>
-        </div>
-        <div class="unit">
-          {% set opening = "Open until 11pm" %}
-          {% set suppress_full = true %}
-          {% include 'service-display/_components/opening-hours.html' %}
-        </div>
-        <div class="unit">
-          <div class="measure">
-            <p>
-              <span class="form-hint small">
-                This service needs some details from you.<br>
-                To use it, fill in the form and they’ll be in touch.
-              </span>
-            </p>
-          </div>
-          <p>
-            <a class="nhsuk-action-link__link" href="#">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-              </svg>
-              <span class="nhsuk-action-link__text">Use this service</span>
-            </a>
-          </p>
-        </div>
-      </div>
-    </div>
-
 
     <!-- A place you must "REFER THEN CALL" yourself to ******************** -->
     <!-- “ITK ONLY AND RING AND GO” **************************************** -->
     <div class="collapse-title">
       <div class="service-listing">
-        <b>Pharmacy</b><br>
-        St George’s Pharmacy
+        <b>Mental health service</b><br>
+        Manchester wellbeing service
         <div class="service-pertinent">
-          <span class="small">0.5 miles away</span>
+          <span class="small">Self-referral service</span>
         </div>
         <span class="collapse-title-indicator-verbose">
           <span class="show">More information</span>
@@ -314,30 +245,14 @@
       <div class="service-details-container service-details --remote">
         <div class="unit">
           <p class="small measure">
-            A pharmacist can help with a wide range of minor health problems. You can
-            have a consultation in a private room. Pharmacists can provide emergency
-            prescriptions.
+          You can refer yourself to psychological therapists in your area. Sometimes known as IAPT (Increasing Access to Psychological Therapies). You might have to wait to get an appointment.
           </p>
           <div class="content-seperator content-seperator--white content-seperator--equalvertspacing"></div>
         </div>
         <div class="unit">
-          <p>
-            <b>Pharmacy</b><br>
-            St George’s Pharmacy<br>
-            46 St George’s Rd<br>
-            Elephant & Castle<br>
-            London<br>
-            SE1 6ET
-          </p>
-        </div>
-        <div class="unit">
-          {% set opening = "Open until 6.30pm" %}
-          {% set suppress_full = true %}
-          {% include 'service-display/_components/opening-hours.html' %}
-        </div>
-        <div class="unit">
           <div class="measure">
-            <span class="form-hint small">This service needs some details from you</span>
+            <span class="form-hint small">This service needs some details from you.<br>
+              To use it, fill in the form and they’ll be in touch. </span>
           </div>
           <p>
             <a class="nhsuk-action-link__link" href="#">
@@ -345,7 +260,7 @@
                 <path d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
               </svg>
-              <span class="nhsuk-action-link__text">Refer me to this service</span>
+              <span class="nhsuk-action-link__text">Self-refer to this service</span>
             </a>
           </p>
         </div>
