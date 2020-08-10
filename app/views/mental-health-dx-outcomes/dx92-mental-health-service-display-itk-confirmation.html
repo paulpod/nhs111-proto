@@ -13,10 +13,10 @@
 {% block content %}
 <div class="content-block measure">
 
-  <h1>You’ll get a call within {{ timeframe }}</h1>
+  <h1>You’ll get a call within 4 hours</h1>
 
   <p>
-    It was booked at <span id="timestamp"></span>. The service will call {{ tel }}. The number might
+    It was booked at <span id="timestamp"></span>. The service will call {{ session.number }}. The number might
     show as ‘unknown’ on your display.
   </p>
   <script type="text/javascript">
@@ -31,7 +31,7 @@
 
   <h2 class="nhsuk-heading-s visuallyhidden">Help on NHS.UK</h2>
   <p>
-    NHS.UK has lots of <a href="#">help and support for people experiencing a
+    NHS.UK has lots of <a href="https://www.nhs.uk/using-the-nhs/nhs-services/mental-health-services/dealing-with-a-mental-health-crisis-or-emergency/">help and support for people experiencing a
     mental health crisis.</a>
   </p>
 

@@ -1,0 +1,131 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+<div class="content-block measure clearfix">
+
+  <h1>Check {% if session.proxy == true %}their{% else %}your{% endif %} details</h1>
+
+
+  <!-- ##################################################################### -->
+  <!-- single user, at home -->
+  <dl class="check-details">
+    <div class="-row">
+      <dt class="-key">
+        Name
+      </dt>
+      <dd class="-value">
+        {{session.firstname}} {{session.lastname}}
+      </dd>
+      <dd class="-actions">
+        <a href="javascript: return false;">
+          Change<span class="visuallyhidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="-row">
+      <dt class="-key">
+        Date of birth
+      </dt>
+      <dd class="-value">
+        {{session.day}} {{session.month}} {{session.year}}
+      </dd>
+      <dd class="-actions">
+        <a href="javascript: return false;">
+          Change<span class="visuallyhidden"> date of birth</span>
+        </a>
+      </dd>
+    </div>
+    <!--
+    <div class="-row">
+      <dt class="-key">
+        Sex
+      </dt>
+      <dd class="-value">
+        Female
+      </dd>
+      <dd class="-actions">
+        <a href="javascript: return false;">
+          Change<span class="visuallyhidden"> sex</span>
+        </a>
+      </dd>
+    </div>
+    -->
+    <div class="-row">
+      <dt class="-key">
+        Home postcode
+      </dt>
+      <dd class="-value">
+        {% if session.postcode %}
+        {{session.postcode}}
+        {% else %}
+        [postcode]
+        {% endif %}
+      </dd>
+      <dd class="-actions">
+        <a href="javascript: return false;">
+          Change<span class="visuallyhidden"> postcode</span>
+        </a>
+      </dd>
+    </div>
+
+    {% if session.email %}
+    <div class="-row">
+      <dt class="-key">
+        Email address
+      </dt>
+      <dd class="-value">
+        {{session.email}}
+      </dd>
+      <dd class="-actions">
+        <a href="javascript: return false;">
+          Change<span class="visuallyhidden"> email address</span>
+        </a>
+      </dd>
+    </div>
+    {% endif %}
+
+    {% if session.number %}
+    <div class="-row">
+      <dt class="-key">
+        Phone number
+      </dt>
+      <dd class="-value">
+        {{session.number}}
+      </dd>
+      <dd class="-actions">
+        <a href="javascript: return false;">
+          Change<span class="visuallyhidden"> number to call</span>
+        </a>
+      </dd>
+    </div>
+    {% endif %}
+
+    {% if session.mobileNumber %}
+    <div class="-row">
+      <dt class="-key">
+        Mobile number
+      </dt>
+      <dd class="-value">
+        {{session.mobileNumber}}
+      </dd>
+      <dd class="-actions">
+        <a href="javascript: return false;">
+          Change<span class="visuallyhidden"> number to call</span>
+        </a>
+      </dd>
+    </div>
+    {% endif %}
+  </dl>
+
+
+  <div class="form-group -controls">
+    <a href="/mental-health-dx-outcomes/dx92-mental-health-service-display-itk-confirmation" class="button">Confirm booking</a>
+  </div>
+
+</div>
+
+{% endblock %}

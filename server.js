@@ -31,6 +31,8 @@ var userJourneys = require('./app/routes/user-journeys');
 var coronavirus = require('./app/routes/coronavirus');
 var pathwaysR19 = require('./app/routes/pathways-r19');
 var edBooking = require('./app/routes/ed-booking');
+var mentalHealth = require('./app/routes/mental-health');
+
 
 var app = express()
 
@@ -128,6 +130,7 @@ app.use('/user-journeys', userJourneys);
 app.use('/coronavirus', coronavirus);
 app.use('/pathways-r19', pathwaysR19);
 app.use('/111-first', edBooking);
+app.use('/mental-health-dx-outcomes', mentalHealth);
 
 // auto render any view that exists
 app.get(/^\/([^.]+)$/, function (req, res) {
