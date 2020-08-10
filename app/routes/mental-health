@@ -1,0 +1,101 @@
+var express = require('express')
+var request = require('request')
+var naturalSort = require('javascript-natural-sort')
+var moment = require('moment-timezone')
+var router = express.Router()
+
+module.exports = router
+
+//validation request//
+router.post('/dx92-mental-health-validation', function(req,res){
+req.session.bookCall = req.body['bookCall']
+if (req.body['bookCall'] === 'yes'){
+  res.redirect('/mental-health-dx-outcomes/personal-details/proxy');
+}
+else {
+  res.redirect('dx92-mental-health-service-display-place');
+}
+});
+
+//proxy//
+router.post('/personal-details/proxy', function(req, res) {
+  req.session.proxy = req.body['proxy']
+  if (req.body['proxy'] === "false") {
+    res.redirect('name');
+  }
+  else {
+    res.redirect('3rd/name-3rd');
+  }
+});
+//Name//
+router.post('/personal-details/name', function(req, res){
+  req.session.firstname = req.body['firstname']
+  req.session.lastname = req.body['secondname']
+  req.session.proxyDetails = "x"
+  res.redirect('date-of-birth');
+});
+
+router.post('/personal-details/3rd/name-3rd', function(req, res){
+  req.session.firstname = req.body['firstname']
+  req.session.lastname = req.body['secondname']
+  res.redirect('date-of-birth-3rd');
+});
+
+//DOB//
+router.post('/personal-details/date-of-birth', function(req,res){
+  req.session.day = req.body['dob-day']
+  req.session.month = req.body['dob-month']
+  req.session.year = req.body['dob-year']
+  res.redirect('is-home-postcode');
+});
+
+router.post('/personal-details/3rd/date-of-birth-3rd', function(req,res){
+  req.session.day = req.body['dob-day']
+  req.session.month = req.body['dob-month']
+  req.session.year = req.body['dob-year']
+  res.redirect('is-home-postcode-3rd');
+});
+
+//home postcode//
+router.post('/personal-details/is-home-postcode', function(req,res){
+  req.session.location = req.body['location']
+  if (req.body['location'] === "home"){
+    res.redirect('phone-number');
+  }
+  else{
+    res.redirect('postcode-home');
+  }
+});
+
+router.post('/personal-details/3rd/is-home-postcode-3rd', function(req,res){
+  req.session.location = req.body['location']
+  if (req.body['location'] === "home"){
+    res.redirect('phone-number-3rd');
+  }
+  else{
+    res.redirect('postcode-home-3rd');
+  }
+});
+
+//postcode home//
+router.post('/personal-details/postcode-home', function(req,res){
+  req.session.postcode = req.body['postcode']
+  res.redirect('phone-number');
+});
+
+router.post('/personal-details/3rd/postcode-home-3rd', function(req,res){
+  req.session.postcode = req.body['postcode']
+  res.redirect('phone-number-3rd');
+});
+
+
+//phone number//
+router.post('/personal-details/phone-number', function(req,res){
+  req.session.number = req.body['tel']
+  res.redirect('check-details');
+});
+
+router.post('/personal-details/3rd/phone-number-3rd', function(req,res){
+  req.session.number = req.body['tel']
+  res.redirect('check-details-3rd');
+});
