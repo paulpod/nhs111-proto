@@ -1,0 +1,43 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <div class="callout callout--attention measure">
+    <h2 class="nhsuk-heading-l">See an optician in the next few days</h2>
+  </div>
+  <div class="measure">
+    <div class="callout callout--warning">
+      <h3>Coronavirus (COVID-19) advice</h3>
+      Do not go to your opticians, phone them instead. All opticians have updated their website, emailed or texted about how they're now offering appointments.
+    </div>
+    <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+  </div>
+  <div>
+      <p><a href="other-services-noInfo">See opticians that can help</a></p>
+      </div>
+
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% include 'service-display/_components/care-advice.html' %}
+  </div>
+
+  {% set acuity = "high" %}
+  {% include 'service-display/_components/worsening-symptoms.html' %}
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}

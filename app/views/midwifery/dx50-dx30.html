@@ -1,0 +1,75 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <div class="measure">
+    <!-- Only display 'Back' if validation is present? -->
+    <a href="javascript:window.history.back();" class="button-back">Back</a>
+    <h1>Services that can help</h1>
+</div>
+  <div class="multiple-service-listing">
+
+     <!-- A place you go **************************************************** -->
+     <!-- “JUST VISIT” ****************************************************** -->
+
+       <div class="service-listing">
+         <b>Midwife and delivery suite</b>
+         <p>James paget hospital</p>
+         <h4>
+           <a>Call 01482 301701</a>
+         </h4>
+         <p>Open 24 hours</p>
+       </div>
+
+       <div class="service-listing">
+         <b>Midwife and delivery suite</b>
+         <p>Norfolk and Norwich hospital</p>
+         <h4>
+           <a>Call 01482 301701</a>
+         </h4>
+         <p>Open 24 hours</p>
+       </div>
+    </div>
+
+
+   <div class="unit">
+     <br>
+     <p>
+       These services are available in [postcode]. <a href="javascript: return false;">Change my location</a>
+     </p>
+     <div class="measure">
+     <details>
+       <summary>Why are these services recommended?</summary>
+       <div>
+         <p>
+           We show you nearby services that are open now, or will be within the time you've been advised to get help.
+         </p>
+       </div>
+     </details>
+   </div>
+     </div>
+     </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% include 'service-display/_components/care-advice.html' %}
+  </div>
+
+  {% set acuity = "high" %}
+  {% include 'service-display/_components/worsening-symptoms.html' %}
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}
