@@ -1,0 +1,37 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <div class="callout callout--attention measure">
+    <h2 class="nhsuk-heading-l">Speak to your midwife or labour ward now</h2>
+  </div>
+  <div class="measure">
+    <p>
+    If you can't contact your midwife or you don't have one, <a href="#">see other services that can help.</a>
+    <p>
+  </div>
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% include 'service-display/_components/care-advice.html' %}
+  </div>
+
+  {% set acuity = "high" %}
+  {% include 'service-display/_components/worsening-symptoms.html' %}
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}
